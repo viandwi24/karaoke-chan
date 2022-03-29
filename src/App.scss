@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.machine-container {
+  // transform: scale(0.5);
+}
+
+.font-game {
+  &, * {
+    font-family: 'Patrick Hand', cursive;
+  }
+}
+
+.speaker {
+  // position: absolute;
+  z-index: 999;
+  background-color: #333; 
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  bottom: 10px;
+  border: 5px solid rgb(56, 56, 56);
+  box-shadow: inset -30px -50px 0 #4c5252;
+  animation: beat 0.075s linear infinite alternate; 
+}
+
+@keyframes beat {
+  100% {
+    transform: scaleX(1.2) scaleY(1.1);
+  }
+}
+
+$music-bar: #2196F3;
+$music-bar-bg: #efefef;
+.music-bar {
+  background: $music-bar-bg;
+  stroke-width: 1;
+  height: 8px;
+  width: 100%;
+  #length {
+    width: 0%;
+    background: $music-bar;
+    height: 100%;
+    transition: width linear 200ms;
+  }
+}
